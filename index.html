@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Javascript Yahtzee</title>
+<link rel="stylesheet" href="dice.css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="dice.js"></script>
+
+
+</head>
+
+<body>
+
+<div id="playboard">
+	<p><span id="new" class="button">New Game</span></p>
+	<svg id="dice" height="50" width="290">
+		<g id="a">
+			<rect height="50" width="50" />
+		</g>
+		<g id="b" transform="translate(60,0)">
+			<rect height="50" width="50" />
+		</g>
+		<g id="c" transform="translate(120,0)">
+			<rect height="50" width="50" />
+		</g>
+		<g id="d" transform="translate(180,0)">
+			<rect height="50" width="50" />
+		</g>
+		<g id="e" transform="translate(240,0)">
+			<rect height="50" width="50" />
+		</g>
+	</svg>
+	
+	<p><span id="roll" class="button">Roll</span></p>
+	
+	
+</div>
+
+
+<table id="score">
+<tr id="ones" class="clickable">
+	<td class="item">Ones</td>
+	<td class="score"></td>
+</tr>
+<tr id="twos" class="clickable">
+	<td class="item">Twos</td>
+	<td class="score"></td>
+</tr>
+<tr id="threes" class="clickable">
+	<td class="item">Threes</td>
+	<td class="score"></td>
+</tr>
+<tr id="fours" class="clickable">
+	<td class="item">Fours</td>
+	<td class="score"></td>
+</tr>
+<tr id="fives" class="clickable">
+	<td class="item">Fives</td>
+	<td class="score"></td>
+</tr>
+<tr id="sixes" class="clickable">
+	<td class="item">Sixes</td>
+	<td class="score"></td>
+</tr>
+<tr id="uppersub">
+	<td class="item">Subtotal</td>
+	<td class="score"></td>
+</tr>
+<tr id="bonus">
+	<td class="item">Bonus</td>
+	<td class="score"></td>
+</tr>
+<tr id="uppertot">
+	<td class="item">Upper Total</td>
+	<td class="score"></td>
+</tr>
+<tr id="threeof" class="clickable">
+	<td class="item">3 of a Kind</td>
+	<td class="score"></td>
+</tr>
+<tr id="fourof" class="clickable">
+	<td class="item">4 of a Kind</td>
+	<td class="score"></td>
+</tr>
+<tr id="full" class="clickable">
+	<td class="item">Full House</td>
+	<td class="score"></td>
+</tr>
+<tr id="smstraight" class="clickable">
+	<td class="item">Small Straight</td>
+	<td class="score"></td>
+</tr>
+<tr id="lrstraight" class="clickable">
+	<td class="item">Large Straight</td>
+	<td class="score"></td>
+</tr>
+<tr id="yahtzee" class="clickable">
+	<td class="item">Yahtzee</td>
+	<td class="score"></td>
+</tr>
+<tr id="ybonus">
+	<td class="item">Yahtzee Bonus</td>
+	<td class="score"></td>
+</tr>
+<tr id="chance" class="clickable">
+	<td class="item">Chance</td>
+	<td class="score"></td>
+</tr>
+<tr id="lowtot">
+	<td class="item">Lower Total</td>
+	<td class="score"></td>
+</tr>
+<tr id="total">
+	<td class="item">Total</td>
+	<td class="score"></td>
+</tr>
+</table>
+
+</body>
+
+</html> 
