@@ -292,15 +292,15 @@ $(document).ready(function($) {
 		
 		else if (this.id == "smstraight")
 		{
-			
+			origroll = thisroll.slice();
 			for (i = 1; i < 5; i++)
 			{
-				if (thisroll[i] == thisroll[i-1])
+				if (origroll[i] == origroll[i-1])
 				{
-					thisroll.splice(i, 1);
+					origroll.splice(i, 1);
 				}
 			}
-			if (thisroll.join("").search("1234") != -1 || thisroll.join("").search("2345") != -1 || thisroll.join("").search("3456") != -1)
+			if (origroll.join("").search("1234") != -1 || origroll.join("").search("2345") != -1 || origroll.join("").search("3456") != -1 || (isyah(thisroll) && Number($("#yahtzee .score").html()) == 50))
 			{
 				tot = 30;
 			}                                        
@@ -311,7 +311,7 @@ $(document).ready(function($) {
 		
 		else if (this.id == "lrstraight")
 		{
-			if (thisroll.join("").search("12345") != -1 || thisroll.join("").search("23456") != -1)
+			if (thisroll.join("").search("12345") != -1 || thisroll.join("").search("23456") != -1 || (isyah(thisroll) && Number($("#yahtzee .score").html()) == 50))
 			{
 				tot = 40;
 			}                                        
@@ -322,7 +322,7 @@ $(document).ready(function($) {
 		
 		else if (this.id == "yahtzee")
 		{
-			if (thisroll[0] == thisroll[1] && thisroll[0] == thisroll[2] && thisroll[0] == thisroll[3] && thisroll[0] == thisroll[4])
+			if (isyah(thisroll))
 			{
 				tot = 50
 			}
@@ -344,7 +344,7 @@ $(document).ready(function($) {
 		}
 		
 		
-		if (thisroll[0] == thisroll[1] && thisroll[0] == thisroll[2] && thisroll[0] == thisroll[3] && thisroll[0] == thisroll[4] && Number($("#yahtzee .score").html()) == 50 && this.id != "yahtzee")
+		if (isyah(thisroll) && Number($("#yahtzee .score").html()) == 50 && this.id != "yahtzee")
 		{
 			$("#ybonus .score").html(Number($("#ybonus .score").html()) + 100);
 		}
@@ -365,6 +365,15 @@ $(document).ready(function($) {
 			$('#total').attr("class", "done");
 		}          
 	});
+	
+	function isyah(thisroll)
+	{
+		if (thisroll[0] == thisroll[1] && thisroll[0] == thisroll[2] && thisroll[0] == thisroll[3] && thisroll[0] == thisroll[4])
+		{
+			return true;
+		}
+		return false;
+	}
 	
 	$('g').click(function()	
 	{
